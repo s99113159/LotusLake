@@ -26,6 +26,9 @@ public final class R {
         public static final int title_bar=0x7f020008;
         public static final int traffic=0x7f020009;
     }
+    public static final class id {
+        public static final int qrcode_camera=0x7f060000;
+    }
     public static final class layout {
         public static final int index_guide=0x7f030000;
         public static final int index_main=0x7f030001;
