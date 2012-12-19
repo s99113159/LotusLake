@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="hello">Hello World, LotusLakeActivity!</string>
+    <string name="app_name">蓮池潭</string>
+    <string name="lotusLake">蓮池潭</string>
+    <string name="qrcode">QR code</string>
+    <string name="qrcodeCamera">看到QR code嗎？\n掃描一下吧！\n有特別體驗喔！\n甚至還有優惠呢！</string>
+    <string name="talk">當地話語</string>
+    <string name="guide">我的導覽</string>
+    <string name="scene">景點商家</string>
+    <string name="map">地圖指引</string>
+    <string name="traffic">交通方式</string>
+    <string name="time">開放時間 6:00 ~ 22:00</string>
+    <string name="introduce">塔高七層，潭水上立有龍虎兩孿生閣樓，樓前各有龍虎塑像，遊客可以身為道，由龍口進，虎口出，取其吉祥之意。塔身與岸邊有九曲橋銜接，與潭面相互對應。龍塔內畫有中國的二十四孝子插圖，虎塔則畫有十二賢士及玉皇大帝三十六宮將圖。</string>
+
+</resources>

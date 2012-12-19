@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ALL"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="@drawable/background"
@@ -8,7 +9,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1.15"
+        android:layout_weight="1"
         android:background="@drawable/title_bar" >
 
         <View
@@ -16,8 +17,9 @@
             android:layout_height="match_parent"
             android:layout_weight="1.5" >
         </View>
-
+
         <TextView
+            android:id="@+id/title"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="7"
@@ -25,6 +27,7 @@
             android:text="@string/lotusLake"
             android:textColor="@color/black"
             android:textSize="24dp" >
+
         </TextView>
 
         <ImageView
@@ -40,82 +43,99 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="8.85"
+        android:layout_weight="9"
         android:orientation="vertical" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="3.85" >
+            android:layout_weight="4" >
 
-            <LinearLayout
+            <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1.75"
-                android:orientation="vertical" >
+                android:layout_weight="0.1" >
+            </View>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" >
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" >
-                </ImageView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" >
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
+            <ImageView
+                android:id="@+id/picture"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="6.5" >
+                android:layout_weight="9.8"
+                android:background="@drawable/v00" >
+            </ImageView>
 
-                <ImageView
-                    android:id="@+id/myMid"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-                </ImageView>
-            </LinearLayout>
-
-            <LinearLayout
+            <View
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="1.75"
-                android:orientation="vertical" >
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" >
-                </LinearLayout>
-
-                <ImageView
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" >
-                </ImageView>
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0dp"
-                    android:layout_weight="1" >
-                </LinearLayout>
-            </LinearLayout>
+                android:layout_weight="0.1" >
+            </View>
         </LinearLayout>
 
-        <ScrollView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="5" >
-        </ScrollView>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" >
+            </View>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="9"
+                android:orientation="vertical" >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25" >
+                </View>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.75"
+                    android:background="@drawable/frame"
+                    android:gravity="center"
+                    android:text="@string/time"
+                    android:textColor="@color/black"
+                    android:textSize="22dp" >
+                </TextView>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="0.25" >
+                </View>
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3.75" >
+
+                    <TextView
+                        android:id="@+id/ench"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/frame_long"
+                        android:padding="5dp"
+                        android:text="@string/introduce"
+                        android:textColor="@color/black"
+                        android:textSize="20dp" >
+                    </TextView>
+                </ScrollView>
+            </LinearLayout>
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5" >
+            </View>
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

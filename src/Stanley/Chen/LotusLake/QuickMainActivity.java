@@ -2,11 +2,11 @@ package Stanley.Chen.LotusLake;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 public class QuickMainActivity extends Activity {
 	/** Called when the activity is first created. */
@@ -17,15 +17,16 @@ public class QuickMainActivity extends Activity {
 
 		findViewById();
 
-		// Bitmap bitmap = BitmapFactory.decodeFile(imageInSD);
-		// myMid.setImageBitmap(bitmap);
 	}
 
 	/** 
 	 * 
 	 * */
 	private void findViewById() {
-		myMid = (ImageView) findViewById(R.id.myMid);
+		picture = (ImageView) findViewById(R.id.picture);
+		title = (TextView) findViewById(R.id.title);
+		ench = (TextView) findViewById(R.id.ench);
+		ALL = (LinearLayout) findViewById(R.id.ALL);
 	}
 
 	/**
@@ -37,6 +38,8 @@ public class QuickMainActivity extends Activity {
 		startActivity(it);
 	}
 
-	private ImageView myMid;
-//	private final String imageInSD = "R.drawable.test";
+	private ImageView picture;
+	private TextView title, ench;
+	private LinearLayout ALL;
+	// private final String imageInSD = "R.drawable.test";
 }
