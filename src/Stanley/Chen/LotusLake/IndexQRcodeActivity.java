@@ -24,7 +24,7 @@ public class IndexQRcodeActivity extends Activity {
 			{ "先樹三山宮", "先樹三山宮",
 					"http://en.wikipedia.org/wiki/Xian_Ju_Three_Mountain_Palace" },
 			{ "鎮福廟", "鎮福廟", "http://en.wikipedia.org/wiki/Zhen_Fu_Temple" },
-			{ "城隍廟", "鳳邑舊城城隍廟", "" },
+			{ "城隍廟", "鳳邑舊城城隍廟", "http://en.wikipedia.org/wiki/Cheng_Huang_Temple" },
 			{ "慈濟宮", "慈濟宮", "http://en.wikipedia.org/wiki/Cih_Ji_Palace" },
 			{ "清水宮", "", "http://en.wikipedia.org/wiki/Qing_shui_Temple" },
 			{ "慈德宮", "", "http://en.wikipedia.org/wiki/Cide_Palace" },
@@ -131,8 +131,15 @@ public class IndexQRcodeActivity extends Activity {
 		for (i = 0; i < linksArray.length; i++)
 			if (linksArray[i][0].equals(place))
 				break;
+
+		TextView qrId = (TextView) findViewById(R.id.qrId);
 		// 中文1 英文2
-		j = language.toLowerCase().equals("ch") ? 1 : 2;
+		if (qrId.getText().toString().equals("QR code")) {
+			language = "en";
+		} else {
+			language = "ch";
+		}
+		j = language.toLowerCase().equals("ch") ?  1 : 2;
 		// 如果此語言的網址為空，則利用另外一個語言的網址代替
 		try {
 			if (linksArray[i][j].equals("")) {

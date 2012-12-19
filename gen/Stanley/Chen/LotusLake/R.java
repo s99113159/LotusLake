@@ -33,11 +33,12 @@ public final class R {
         public static final int v03=0x7f02000f;
     }
     public static final class id {
-        public static final int ALL=0x7f060001;
-        public static final int ench=0x7f060004;
-        public static final int picture=0x7f060003;
-        public static final int qrcode_camera=0x7f060000;
-        public static final int title=0x7f060002;
+        public static final int ALL=0x7f060002;
+        public static final int ench=0x7f060005;
+        public static final int picture=0x7f060004;
+        public static final int qrId=0x7f060000;
+        public static final int qrcode_camera=0x7f060001;
+        public static final int title=0x7f060003;
     }
     public static final class layout {
         public static final int index_guide=0x7f030000;

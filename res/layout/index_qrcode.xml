@@ -10,14 +10,16 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:background="@drawable/title_bar" >
-
+
         <TextView
+            android:id="@+id/qrId"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
             android:text="@string/qrcode"
             android:textColor="@color/black"
             android:textSize="24dp" >
+
         </TextView>
     </LinearLayout>
 
