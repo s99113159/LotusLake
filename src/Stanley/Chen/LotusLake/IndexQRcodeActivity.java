@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.TextView;
@@ -16,33 +17,18 @@ import android.widget.Toast;
 public class IndexQRcodeActivity extends Activity {
 	/** Called when the activity is first created. */
 	private String linksArray[][] = {
-			{
-					"孔廟",
-					"http://zh.wikipedia.org/wiki/%E9%AB%98%E9%9B%84%E5%AD%94%E5%AD%90%E5%BB%9F",
+			{ "孔廟", "高雄孔子廟",
 					"http://en.wikipedia.org/wiki/Confuciustempel_van_Kaohsiung" },
-			{
-					"春秋閣",
-					"http://zh.wikipedia.org/wiki/%E6%98%A5%E7%A7%8B%E9%96%A3_(%E9%AB%98%E9%9B%84%E5%B8%82)",
+			{ "春秋閣", "春秋閣_(高雄市)",
 					"http://en.wikipedia.org/wiki/Spring_and_Autumn_Pavilions" },
-			{
-					"先樹三山宮",
-					"http://zh.wikipedia.org/wiki/%E5%85%88%E6%A8%B9%E4%B8%89%E5%B1%B1%E5%AE%AE",
+			{ "先樹三山宮", "先樹三山宮",
 					"http://en.wikipedia.org/wiki/Xian_Ju_Three_Mountain_Palace" },
-			{ "鎮福廟",
-					"http://zh.wikipedia.org/wiki/%E9%8E%AE%E7%A6%8F%E5%BB%9F",
-					"http://en.wikipedia.org/wiki/Zhen_Fu_Temple" },
-			{
-					"城隍廟",
-					"http://zh.wikipedia.org/wiki/%E9%B3%B3%E9%82%91%E8%88%8A%E5%9F%8E%E5%9F%8E%E9%9A%8D%E5%BB%9F",
-					"" },
-			{ "慈濟宮",
-					"http://zh.wikipedia.org/wiki/%E6%85%88%E6%BF%9F%E5%AE%AE",
-					"http://en.wikipedia.org/wiki/Cih_Ji_Palace" },
+			{ "鎮福廟", "鎮福廟", "http://en.wikipedia.org/wiki/Zhen_Fu_Temple" },
+			{ "城隍廟", "鳳邑舊城城隍廟", "" },
+			{ "慈濟宮", "慈濟宮", "http://en.wikipedia.org/wiki/Cih_Ji_Palace" },
 			{ "清水宮", "", "http://en.wikipedia.org/wiki/Qing_shui_Temple" },
 			{ "慈德宮", "", "http://en.wikipedia.org/wiki/Cide_Palace" },
-			{ "天公廟",
-					"http://zh.wikipedia.org/wiki/%E5%A4%A9%E5%85%AC%E5%BB%9F",
-					"http://en.wikipedia.org/wiki/God_Temple" },
+			{ "天公廟", "", "http://en.wikipedia.org/wiki/God_Temple" },
 			{ "天府宮", "", "http://en.wikipedia.org/wiki/Tianfu_Palace" },
 			{ "啟明堂", "", "http://en.wikipedia.org/wiki/Chi_Ming_palace" },
 			{ "龍虎塔", "",
@@ -141,8 +127,7 @@ public class IndexQRcodeActivity extends Activity {
 	protected void getPlaceUrl(String place, String language) {
 		// 尋找到指定的景點
 		int i, j;
-		String url;
-
+		String placeUrl;
 		for (i = 0; i < linksArray.length; i++)
 			if (linksArray[i][0].equals(place))
 				break;
@@ -150,12 +135,21 @@ public class IndexQRcodeActivity extends Activity {
 		j = language.toLowerCase().equals("ch") ? 1 : 2;
 		// 如果此語言的網址為空，則利用另外一個語言的網址代替
 		try {
-			url = linksArray[i][j].equals("") ? j == 1 ? linksArray[i][2]
-					: linksArray[i][1] : linksArray[i][j];
-			goToLink(url);
+			if (linksArray[i][j].equals("")) {
+				placeUrl = j == 1 ? linksArray[i][2] : linksArray[i][1];
+				language = j == 1 ? "en" : "ch";
+			} else {
+				placeUrl = linksArray[i][j];
+			}
+			goToLink("http://120.119.77.249/~s11113151/LotusLake/addPoint.php?language="
+					+ language.toLowerCase()
+					+ "&attractions="
+					+ place
+					+ "&direction=" + placeUrl);
 		} catch (Exception e) {
 			Toast.makeText(this, "This infomation can not be found.",
 					Toast.LENGTH_SHORT).show();
+			Log.e("error", e.toString());
 		}
 
 	}
@@ -175,6 +169,8 @@ public class IndexQRcodeActivity extends Activity {
 		try {
 			startActivity(new Intent(Intent.ACTION_VIEW, uri));
 		} catch (ActivityNotFoundException e) {
+			Toast.makeText(this, "出現錯誤，請稍後再嘗試", Toast.LENGTH_SHORT).show();
+			Log.e("error", e.toString());
 		}
 	}
 
